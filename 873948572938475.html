@@ -1,9 +1,42 @@
 
 <html>
-    <head>
+    <html>
+        <head>
+            <title>Riddle</title>
+            <link rel="stylesheet" href="index.css">
+        </head>
+        <body>
+            <div class="container">
+                <h2>I am the oldest man in the Bible, but I died before my father.</h2>
+                <label for="name">Who am I?</label>
+                <input type="text" id="name" name="name">
+                <label for="how">How is this possible? Put answer in Book Chapter:Verse form</label>
+                <input type="text" id="how" name="how">
+                <button onclick="checkValues()" class="custom-button">Check Values</button>
+                <p id="result"></p>
+              </div>
         
-    </head>
-    <body>
 
-    </body>
+              <!--Genesis 5:24-->
+              <script>
+                function checkValues() {
+                  var nameValue = document.getElementById("name").value;
+                  var howValue = document.getElementById("how").value;
+                  
+                  if (nameValue.trim() !== '' && howValue.trim() !== '') {
+
+                    if (nameValue.toLowerCase() == "methuselah" && howValue.toLowerCase() == "genesis 5:24"){
+                        window.location.href = 'www.google.com';
+                    }
+                    else{
+                        document.getElementById("result").innerHTML = "Incorrect";
+                    }
+                   
+                  } else {
+                    document.getElementById("result").innerHTML = "Please fill in both fields.";
+                  }
+                }
+              </script>
+        </body>
+        </html>
 </html>
