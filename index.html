@@ -1,7 +1,41 @@
 <html>
 <head>
+    <title>Enter the Correct Digit of Pi</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<p>Hello World!</p>
+    <div class="container">
+        <h2>Enter the Correct Digit of Pi</h2>
+        <label for="place">Place:</label>
+        <input type="text" id="place" name="place">
+        <label for="digit">Digit:</label>
+        <input type="text" id="digit" name="digit">
+        <button onclick="checkValues()" class="custom-button">Check Values</button>
+        <p id="result"></p>
+      </div>
+
+      <script>
+        function checkValues() {
+          var placeValue = document.getElementById("place").value;
+          var digitValue = document.getElementById("digit").value;
+          
+          if (placeValue.trim() !== '' && digitValue.trim() !== '') {
+            // Perform your checks or actions here based on the entered values
+            if (!isNaN(placeValue) && !isNaN(digitValue)) {
+              if (placeValue == 12 && digitValue == 4){
+                window.location.href = '873948572938475.html';
+              }
+              else{
+                document.getElementById("result").innerHTML = "Incorrect digit.";
+              }
+              
+            } else {
+              document.getElementById("result").innerHTML = "Please enter valid numbers.";
+            }
+          } else {
+            document.getElementById("result").innerHTML = "Please fill in both fields.";
+          }
+        }
+      </script>
 </body>
 </html>
