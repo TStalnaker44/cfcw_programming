@@ -1,0 +1,38 @@
+
+<html>
+    <html>
+        <head>
+            <title>Riddle</title>
+            <link rel="stylesheet" href="index.css">
+        </head>
+        <body>
+            <div class="container">
+                <h2>Inspect the Source</h2>
+                <label for="name">Value:</label>
+                <input type="text" id="value" name="value">
+                <button onclick="checkValues()" class="custom-button">Check Value</button>
+                <p id="result"></p>
+              </div>
+        
+              <script>
+                function checkValues() {
+                  var value = document.getElementById("value").value;
+                  
+                  if (value.trim() !== '') {
+
+                    <!-- LOOK HERE -->
+                    if (value.toLowerCase() == "invisible"){
+                        window.location.href = 'www.google.com';
+                    }
+                    else{
+                        document.getElementById("result").innerHTML = "Incorrect";
+                    }
+                   
+                  } else {
+                    document.getElementById("result").innerHTML = "Please fill in the field.";
+                  }
+                }
+              </script>
+        </body>
+        </html>
+</html>
